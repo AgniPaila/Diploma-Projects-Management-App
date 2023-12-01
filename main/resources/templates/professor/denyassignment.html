@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Application</title>
+</head>
+
+
+<body>
+
+	<section class="vh-100" style="background-color: #9A616D;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+              
+             
+              
+              	  <h2 style="color:red;"> Warning!</h2>
+              	  <br>
+              	
+	              <h5>There are no students' applications for this subject, so you can't assign it!</h5>
+				  <hr>
+				  
+				  <p>
+				    	<a th:href="@{/professor/subjects}" class="btn btn-outline-dark" >Back</a>
+				    	
+				  </p>
+				  
+				  <p>
+				  
+				    	<a th:href="@{/}" class="btn btn-dark btn-sm mb-3">Homepage</a>
+				    	<a th:href="@{/logout}" class="btn btn-dark btn-sm mb-3">Logout</a>
+				    
+				  </p>
+						              
+
+              
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Applications</title>
+</head>
+
+
+<body>
+
+	<section class="vh-100" style="background-color: #9A616D;">
+  <div class="vh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+              <div class="card-body p-4 p-lg-5 text-black">
+              
+              <!--<form th:action="@{/professor/subjects}" th:object="${professor}" method="POST" >  -->
+              
+              
+	              <h3>Applications</h3>
+				  <hr>
+				  
+				  
+				  <h6>Assign this diploma thesis subject via one of the following strategies:</h6>
+				  <p>
+				  
+				  		<form th:action="@{/professor/assign}" th:object="${professor}" method="POST" > 
+				  	
+					    	<button type="submit" name="button1" value="button1" class="btn btn-outline-dark" onclick="if (!(confirm('Are you sure you want to assign randomly this subject to a student?'))) return false">Randomly</button>
+					    	<button type="submit" name="button2" value="button2" class="btn btn-outline-dark" onclick="if (!(confirm('Are you sure you want to assign this subject to the student with the best grade?'))) return false">Best Grade</button>
+					    	<button type="submit" name="button3" value="button3" class="btn btn-outline-dark" onclick="if (!(confirm('Are you sure you want to assign this subject to a student with the fewest remaining courses?'))) return false">Fewest Courses</button>
+					    	<button type="submit" name="button4" value="button4" class="btn btn-outline-dark" onclick="if (!(confirm('Are you sure you want to assign this subject to a student by your given thresholds?'))) return false">Customized</button>
+	
+				    	
+				    	
+				    	</form>
+				    
+				  </p>
+				  <hr> <br>
+				
+				 
+				  <table class="table table-bordered table-striped">
+						 <thead class="thead-dark">
+						  <tr>
+						    <th>Students</th>
+
+						  </tr>
+						 </thead>
+						 
+						 
+						<tbody>
+							<tr th:each="tempApp : ${applications}">
+							
+								<td th:text="${tempApp.student.getFullName()}" />	
+									
+							</tr>
+						</tbody>			 
+				  </table>
+				  
+				  <br>
+				  
+				  <p>
+				    	<a th:href="@{/professor/subjects}" class="btn btn-outline-dark">Back</a>
+				    	
+				    
+				  </p>
+				  
+				  <hr> <br>
+				  
+				  <p>
+				    	<a th:href="@{/}" class="btn btn-dark btn-sm mb-3">Homepage</a>
+				    	<a th:href="@{/logout}" class="btn btn-dark btn-sm mb-3">Logout</a>
+				    	
+				    
+				  </p>
+						              
+			  <!--</form>    -->     
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Thresholds</title>
+</head>
+
+
+<body>
+
+	<section class="vh-100" style="background-color: #9A616D;">
+  <div class="vh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+	
+				<form th:action="@{/professor/threshold}" method="POST" >
+
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <span class="h2 fw-bold mb-0">Thresholds</span>
+                  </div>
+
+	
+				  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Fill in your thresholds</h5>
+	
+				  
+				  
+	              <div class="form-outline mb-4">
+	                 <label class="form-label" for="form2Example17">Enter the minimum average grade a student should have (threshold1):</label>
+	                 <input type="number" name="th1" required class="form-control form-control-lg" /> 
+	              </div>
+	                  
+	              <div class="form-outline mb-4">
+	                 <label class="form-label" for="form2Example27">Enter the maximum remaining courses a student should have (threshold2):</label>
+	                 <input type="number" name="th2" required class="form-control form-control-lg" /> 
+	              </div>
+	              
+	              
+	              <p>
+	              	<button type="submit" class="btn btn-info col-2">Submit</button>
+	              </p>
+	                  
+  				  <p>
+				    	<a th:href="@{/}" class="btn btn-dark btn-sm mb-3">Homepage</a>
+				    	<a th:href="@{/logout}" class="btn btn-dark btn-sm mb-3">Logout</a>
+				    
+				  </p>
+				</form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+    
+
+</body>
+</html>

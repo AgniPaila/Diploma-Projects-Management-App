@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Register</title>
+</head>
+
+
+<body>
+
+<section class="vh-100" style="background-color: #9A616D;">
+	  <div class="container py-5 h-100">
+	    <div class="row d-flex justify-content-center align-items-center h-100">
+	      <div class="col-12 col-md-8 col-lg-6 col-xl-9">
+	        <div class="card" style="border-radius: 1rem;">
+	          <div class="row g-0">
+	            <div class="col-md-6 col-lg-7 col-xl-9 d-flex align-items-center">
+	              <div class="card-body p-4 p-lg-5 text-black">
+
+					  <form 
+					  action="#" 
+					  th:action="@{/save}" th:object="${user}" method="post">
+					  
+					  <div class="d-flex align-items-center mb-3 pb-1">
+	                    <span class="h2 fw-bold mb-0">Diploma Management Account</span>
+	                  </div>
+	
+	                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Register into your account</h5>
+	
+						<input type="hidden" th:field="*{id}" />
+	
+	                  <div class="form-outline mb-4">
+	                    <label class="form-label" for="form2Example17">Enter your username:</label>
+	                  	<input type="text" name="username" th:placeholder="Username" class="form-control form-control-lg" /> 
+	                    <!-- <input type="text" id="form2Example17" class="form-control form-control-lg" />  -->
+	                  </div>
+	
+	                  <div class="form-outline mb-4">
+	                    <label class="form-label" for="form2Example27">Enter your password:</label>
+	                  	<input type="password" th:placeholder="Password" name="password" class="form-control form-control-lg" /> 
+	                    <!-- <input type="password" id="form2Example27" class="form-control form-control-lg" /> -->
+	                    
+	                  </div>
+	                  
+	                  <div class="form-outline mb-4">
+	                    <label class="form-label" for="form2Example27">Register as:</label>
+	                  	<select th:field="*{role}" required>
+					      <option value="">-</option>
+					      <option value="PROFESSOR">PROFESSOR</option>
+					      <option value="STUDENT">STUDENT</option>
+					    </select>
+	                    
+	                  </div>
+	                  
+	                  <div class="pt-1 mb-4">
+	                  	<button type="Submit" class="btn btn-dark btn-lg btn-block"> Register </button>
+	                    <!-- <button class="btn btn-dark btn-lg btn-block" type="button">Login</button> -->
+	                  </div>
+	
+	                
+	                  
+	                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Do you already have an account? <a th:href="@{login}"
+	                      style="color: #0000FF;">Login here</a></p>
+	        	     
+	         		  <div th:if="${param.error}" class="mb-5 pb-lg-2" style="color: #700000;"><p>Registration Error.</p></div> <br/>
+   
+   					  <span th:utext="${successMessage}" class="mb-5 pb-lg-2" style="color: #700000;"></span>
+	                </form>
+				  </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</section>  
+   
+</body>
+</html>
+
+
+
+	
+	     

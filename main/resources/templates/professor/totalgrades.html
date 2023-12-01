@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Total Grades</title>
+</head>
+
+
+<body>
+
+	<section class="vh-100" style="background-color: #9A616D;">
+  <div class="vh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+              <div class="card-body p-4 p-lg-5 text-black">
+              
+              <!--<form th:action="@{/professor/subjects}" th:object="${professor}" method="POST" >  -->
+              
+              
+	              <h3>Total Grades</h3>
+				  <hr>
+				  
+				  
+				  <h6>These are all the Grades for this diploma thesis subject:</h6>
+				  
+				  <hr>
+				
+				 
+				  <table class="table table-bordered table-striped">
+						 <thead class="thead-dark">
+						  <tr>
+						    <th>Thesis</th>
+						    
+						    <th>Assigned Student </th>
+						    <th>Implementation Grade</th>
+						    <th>Report Grade</th>
+						    <th>Presentation Grade</th>
+						    <th>TOTAL GRADE</th>
+						  </tr>
+						 </thead>
+						 
+						 
+						<tbody>
+							<tr th:each="tempThesis : ${theses}">
+							
+								<td th:text="${tempThesis.getSubject().getTitle()}" />	
+								
+								
+								<td th:text="${tempThesis.getStudent().getFullName()}" />	
+								
+								
+								<td th:text="${tempThesis.getImplementationGrade()}" />	
+								
+								<td th:text="${tempThesis.getReportGrade()}" />	
+								
+								
+								<td th:text="${tempThesis.getPresentationGrade()}" />	
+								
+								<td th:text="${tempThesis.getTotalGrade()}" />	
+									
+						
+								
+							</tr>
+						</tbody>	
+						 
+						 
+						 
+				  </table>
+				  <p>
+				    	<a th:href="@{/professor/supervisions}" class="btn btn-outline-dark">Back</a>
+				    	
+				    
+				  </p>
+				  <p>
+				    	<a th:href="@{/}" class="btn btn-dark btn-sm mb-3">Homepage</a>
+				    	<a th:href="@{/logout}" class="btn btn-dark btn-sm mb-3">Logout</a>
+				    	
+				    
+				  </p>
+						              
+			  <!--</form>    -->     
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>

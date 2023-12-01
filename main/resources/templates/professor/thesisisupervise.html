@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Supervisions</title>
+</head>
+
+
+<body>
+
+	<section class="vh-100" style="background-color: #9A616D;">
+  <div class="vh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+              <div class="card-body p-4 p-lg-5 text-black">
+              
+              <!--<form th:action="@{/professor/subjects}" th:object="${professor}" method="POST" >  -->
+              
+              
+	              <h3>Supervisions</h3>
+				  <hr>
+				  
+				  
+				  <h6>These are all the diploma thesis subjects that I supervise</h6>
+				  
+				  <hr>
+				
+				 
+				  <table class="table table-bordered table-striped">
+						 <thead class="thead-dark">
+						  <tr>
+						    <th>Thesis</th>
+						    
+						    <th>Assigned Student </th>
+						    <th></th>
+						    <th>Calculate Overall Grade</th>
+						  </tr>
+						 </thead>
+						 
+						 
+						<tbody>
+							<tr th:each="tempThesis : ${theses}">
+							
+								<td th:text="${tempThesis.getSubject().getTitle()}" />	
+								
+								
+								<td th:text="${tempThesis.getStudent().getFullName()}" />	
+									
+								
+								<td>
+								
+									<a th:href="@{/professor/thesisGrades(thesisId=${tempThesis.id})}"
+									   class="btn btn-dark btn-sm">
+										Set Grades
+									</a> 
+									
+								</td>
+								
+								
+								<td>
+								
+									<a th:href="@{/professor/calculateGrades(thesisId=${tempThesis.id})}"
+									   class="btn btn-dark btn-sm">
+										Total Grade
+									</a> 
+									
+								</td>
+								
+								
+							</tr>
+						</tbody>	
+						 
+						 
+						 
+				  </table>
+				  <p>
+				    	<a th:href="@{/professor/dashboard}" class="btn btn-outline-dark">Back</a>
+				    	
+				    
+				  </p>
+				  <p>
+				    	<a th:href="@{/}" class="btn btn-dark btn-sm mb-3">Homepage</a>
+				    	<a th:href="@{/logout}" class="btn btn-dark btn-sm mb-3">Logout</a>
+				    	
+				    
+				  </p>
+						              
+			  <!--</form>    -->     
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
