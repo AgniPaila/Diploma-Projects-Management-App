@@ -1,3 +1,5 @@
 # Diploma-Projects-Management-App
-An app we created with my fellow students for our software technology course. 
-Students and professors are able to sign/log in and monitor their profiles and their diploma thesis. 
+A web application I developed with my colleagues.
+We used Java, Spring Boot, Maven, HTML, Bootstrap and MySQL.
+This web app allows students and professors to sign/log in and manage their profiles and courses. 
+Students are able to apply for a thesis and get selected from the course’s professor.
