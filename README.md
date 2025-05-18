@@ -43,11 +43,15 @@ making the academic process more efficient and transparent.
 
 ## 🚀 How to Run
 Clone the repository
+
 Open the project in Eclipse
+
 Build and run the application
+
 Access the app via http://localhost:8080
 
 ## 📘 Course Info
 Course: Τεχνολογία Λογισμικού (Software Engineering)
+
 Team: This project was developed in collaboration with two fellow students.
 
