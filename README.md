@@ -51,7 +51,7 @@ Build and run the application
 Access the app via http://localhost:8080
 
 ## 📘 Course Info
-Course: Τεχνολογία Λογισμικού (Software Engineering)
+Course: Τεχνολογία Λογισμικού (Software Engineering - 4th year)
 
 Team: This project was developed in collaboration with two fellow students.
 
